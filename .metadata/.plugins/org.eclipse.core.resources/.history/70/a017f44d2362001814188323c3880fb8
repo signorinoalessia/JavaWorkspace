@@ -20,9 +20,6 @@ public class CountingAddiction {
 		
 		// Variables
 		String sentence;
-		int frequency;
-	//	char c;
-		
 		
 		// Welcome message
 		System.out.println("===========================");
@@ -33,24 +30,9 @@ public class CountingAddiction {
 		// Ignore case
 		// Must be letters only (see ascii range)
 		// Must be one letter at least
-		
 		sentence = keyboard.nextLine();
-		sentence.equalsIgnoreCase(sentence);
-		sentence.equals('a');
-		
-		char c = '*';
-
-		if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z')
-			  System.out.println("$c is an alphabet.");
-		
 		
 		// Display frequency of each of 26 letters
-//		for (char c1 = 'a'; c1 <= 'z'; c1++);
-//		{ 
-//			System.out.println("The letter "+c1+" has a frequency of "); //+frequency
-//		}
-//			
-		
 		// Display the frequency of the most frequent letter
 		// Display the frequency of the least frequent letter but at least once
 		// Display number of letters that have frequency of zero

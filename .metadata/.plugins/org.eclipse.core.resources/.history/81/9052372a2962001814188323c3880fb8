@@ -45,11 +45,11 @@ public class CountingAddiction {
 		
 		
 		// Display frequency of each of 26 letters
-//		for (char c1 = 'a'; c1 <= 'z'; c1++);
-//		{ 
-//			System.out.println("The letter "+c1+" has a frequency of "); //+frequency
-//		}
-//			
+		for (char c1 = 'a'; c1 <= 'z'; c1++);
+		{ 
+			System.out.println("The letter "+c1+" has a frequency of "); //+frequency
+		}
+			
 		
 		// Display the frequency of the most frequent letter
 		// Display the frequency of the least frequent letter but at least once
