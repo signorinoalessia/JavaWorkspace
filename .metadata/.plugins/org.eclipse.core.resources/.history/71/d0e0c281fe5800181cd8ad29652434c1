@@ -1,0 +1,23 @@
+//********************************************************************
+// Assignment 1 - COMP248 Summer 2018
+// Program 2: Fidelity Card Reward
+// Author: A.Signorino - 400007205
+//
+//  This program prompts the user to enter two sets of values and 
+//  calculates sum, difference, multiplication, division, and modulo
+//********************************************************************
+
+import java.util.Scanner;
+
+public class FidelityCardReward {
+
+	public static void main(String[] args) {
+		
+		System.out.println("===========================================");
+		System.out.println("Welcome to the Fidelity Card Rewards System");
+		System.out.println("===========================================");
+		
+
+	}
+
+}

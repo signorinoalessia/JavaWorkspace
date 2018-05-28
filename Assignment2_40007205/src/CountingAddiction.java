@@ -1,0 +1,44 @@
+//********************************************************************
+// Assignment 2 - COMP248 Summer 2018
+// Program 2: Counting Addiction
+// Author: A.Signorino - 400007205
+//
+// This program helps Lucie deal with her counting addiction by asking 
+// the user for a sentence and counts the frequency of each letter, 
+// then displays statistics about these frequencies
+//********************************************************************
+
+import java.util.Scanner;
+
+public class CountingAddiction {
+
+	public static void main(String[] args) {
+		
+		Scanner keyboard = new Scanner(System.in);
+		
+		// Constants
+		
+		// Variables
+		String sentence;
+		
+		// Welcome message
+		System.out.println("===========================");
+		System.out.println("Welcome to the Counting Addiction Program");
+		System.out.println("===========================");
+		System.out.print("Enter a sentence: ");
+		
+		// Ignore case
+		// Must be letters only (see ascii range)
+		// Must be one letter at least
+		sentence = keyboard.nextLine();
+		
+		// Display frequency of each of 26 letters
+		// Display the frequency of the most frequent letter
+		// Display the frequency of the least frequent letter but at least once
+		// Display number of letters that have frequency of zero
+		
+		
+
+	}
+
+}

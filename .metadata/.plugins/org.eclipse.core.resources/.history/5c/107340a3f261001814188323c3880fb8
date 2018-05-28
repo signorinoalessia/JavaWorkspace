@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class SoshiiMaGame {
+
+	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
+		
+		// Constants
+		final int DICE_LENGTH = 10;
+		final int NB_MAX_ROLLS = 3;
+		
+		// Variables
+		int rollNumber, dieValue1, dieValue2, dieSum = 0, score;
+		
+		// Display welcome message
+		System.out.println("***** Let's play Soshii-Ma *****");
+		System.out.println();
+		
+		//First round of values
+		System.out.println("Enter the value of die#1: ");
+		dieValue1 = keyboard.nextInt();
+		System.out.println("Enter the value of die#1: ");
+		dieValue2 = keyboard.nextInt();
+		System.out.println();
+		
+		dieSum = dieValue1 + dieValue2;
+		
+		for (int nbScore = 0; nbScore <= NB_MAX_ROLLS; nbScore++) {
+			if ((dieSum == 10) || (dieSum == 14)) {
+				score = 100;
+				System.out.println("The player wins with 50 points");
+			}
+			else if ((dieSum ==3)||(dieSum==5)) {
+				score = 0;
+				System.out.println("The player loses");
+			}
+			else {
+				score = 20;
+			}
+		}
+
+	}
+
+}

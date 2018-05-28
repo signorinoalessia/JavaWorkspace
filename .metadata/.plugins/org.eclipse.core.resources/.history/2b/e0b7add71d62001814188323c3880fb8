@@ -1,0 +1,85 @@
+//********************************************************************
+// Assignment 2 - COMP248 Summer 2018
+// Program 1: Game of Soshii-Ma
+// Author: A.Signorino - 400007205
+//
+// This program recreates a game of Soshii-Ma, prompts a second roll 
+// sequence if necessary, and compares the dice values to calculate score
+//********************************************************************
+
+import java.util.Scanner;
+
+public class SoshiiMaGame {
+
+	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
+		
+		// Constants
+		final int DICE_MAX = 11;
+		final int DICE_MIN = 0;
+		final int NB_MAX_ROLLS = 3;
+		
+		// Variables
+		int dieValue1, dieValue2, dieValue3, dieSum = 0, score;
+		
+		// Display welcome message
+		System.out.println("***** Let's play Soshii-Ma *****");
+		System.out.println();
+		
+		// Ask for first two values
+		System.out.print("Enter the value of die#1: ");
+		dieValue1 = keyboard.nextInt();
+		System.out.print("Enter the value of die#2: ");
+		dieValue2 = keyboard.nextInt();
+		dieSum = dieValue1 + dieValue2;
+		
+		//(keyboard.nextInt()
+		if ((dieValue1 > DICE_MIN) && (dieValue1 <= DICE_MAX)) {
+			// First roll
+			if ((dieSum == 10) || (dieSum == 14)) {
+				score = 100;
+				System.out.println();
+				System.out.println("The player wins with 100 points");
+			}
+			else if ((dieSum ==3)||(dieSum==5)) {
+				score = 0;
+				System.out.println();
+				System.out.println("The player loses");
+			}
+			else {
+			// Second roll
+				score = 20;
+				System.out.print("Enter the value of die#3: ");
+				dieValue3 = keyboard.nextInt();
+				
+				// Verifying values 
+				/*	3 identical values, player gets +25 pts
+					2 identical values but 3rd die is diff, player gets -5pts
+					All diff values, but one value is 11, player loses, pts = 0 */
+					
+				for (int i=0; i<1; i++) {
+					if (((dieValue1) == (dieValue2)) && ((dieValue2)==(dieValue3)))
+					{
+						score += 25;
+						System.out.println();
+						System.out.println("The player wins with "+score+" points");
+					}
+					else if (((dieValue1)==(dieValue2) && (dieValue2)!=(dieValue3)))
+					{
+						score -= 5;
+						System.out.println();
+						System.out.println("The player wins with "+score+" points");
+					}
+					else
+					{
+						System.out.println();
+						System.out.println("The player loses with 0 points");
+					}
+				}
+			}
+		}
+		else
+		System.out.println("Invalid Input: The value of a die must be within [1...11]");
+	}
+}
+

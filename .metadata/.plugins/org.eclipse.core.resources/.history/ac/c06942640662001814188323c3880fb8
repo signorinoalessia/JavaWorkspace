@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class SoshiiMaGame {
+
+	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
+		
+		// Constants
+		final int DICE_LENGTH = 10;
+		final int NB_MAX_ROLLS = 3;
+		
+		// Variables
+		int rollNumber, dieValue1, dieValue2, dieValue3, dieSum = 0, score;
+		
+		// Display welcome message
+		System.out.println("***** Let's play Soshii-Ma *****");
+		System.out.println();
+		
+		// Ask for first two values
+		System.out.print("Enter the value of die#1: ");
+		dieValue1 = keyboard.nextInt();
+		System.out.print("Enter the value of die#2: ");
+		dieValue2 = keyboard.nextInt();
+
+		dieSum = dieValue1 + dieValue2;
+		
+		
+		for (int roll = 0; roll <= NB_MAX_ROLLS; roll++) {
+			
+			
+			// *** First roll
+			
+			if ((dieSum == 10) || (dieSum == 14)) {
+				score = 100;
+				System.out.println();
+				System.out.println("The player wins with 100 points");
+			}
+			else if ((dieSum ==3)||(dieSum==5)) {
+				score = 0;
+				System.out.println();
+				System.out.println("The player loses");
+			}
+			else {
+				score = 20;
+				
+				// *** Second roll
+				
+				System.out.print("Enter the value of die#3: ");
+				dieValue3 = keyboard.nextInt();
+				System.out.println();
+
+				//3 identical values, player gets +25 pts
+				//2 identical values but 3rd die is diff, player gets -5pts
+				// all diff values, but one value is 11, player loses, pts = 0
+				// else no extra pts
+				
+					
+					
+	
+			}
+		}
+	}
+}
+
