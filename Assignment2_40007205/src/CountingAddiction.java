@@ -19,10 +19,9 @@ public class CountingAddiction {
 		// Constants
 		
 		// Variables
-		String sentence;
-		int frequency;
-	//	char c;
-		
+		String sentence = "";
+		char[] c = sentence.toCharArray();
+		int[] frequencyArray = new int[26];
 		
 		// Welcome message
 		System.out.println("===========================");
@@ -30,26 +29,32 @@ public class CountingAddiction {
 		System.out.println("===========================");
 		System.out.print("Enter a sentence: ");
 		
-		// Ignore case
-		// Must be letters only (see ascii range)
-		// Must be one letter at least
-		
+		// Ignore case, must be letters only, must be one letter at least
 		sentence = keyboard.nextLine();
-		sentence.equalsIgnoreCase(sentence);
-		sentence.equals('a');
-		
-		char c = '*';
+		sentence.toLowerCase();
+		// letters only smthg;
 
-		if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z')
-			  System.out.println("$c is an alphabet.");
-		
-		
 		// Display frequency of each of 26 letters
-//		for (char c1 = 'a'; c1 <= 'z'; c1++);
-//		{ 
-//			System.out.println("The letter "+c1+" has a frequency of "); //+frequency
-//		}
-//			
+		for (int i=0; i<sentence.length(); i++)
+		{
+			int x = frequencyArray[sentence.charAt(i)]++;
+			System.out.println("Results frequency: "+x);
+		}
+		
+		
+		
+//		for (int x = 0; x < c.length; x++) {
+//			for (int i = 0; i < sentence.length(); i++) {
+//	            if (sentence.charAt(i) == x) {
+//	            	frequencyArray[i]++;
+//	            }
+//				System.out.println("The letter "+x+" has a frequency of "+frequencyArray[i]); //+frequency
+//			}
+//		}	
+		
+//		if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z')
+//		  System.out.println("$c is an alphabet.");	
+	
 		
 		// Display the frequency of the most frequent letter
 		// Display the frequency of the least frequent letter but at least once

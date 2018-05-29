@@ -35,8 +35,8 @@ public class SoshiiMaGame {
 		dieValue2 = keyboard.nextInt();
 		dieSum = dieValue1 + dieValue2;
 		
-		//(keyboard.nextInt()
-		if ((dieValue1 > DICE_MIN) && (dieValue1 <= DICE_MAX)) {
+		// Entered dice roll must be within boundaries of 1-11
+		if ((dieValue1 > DICE_MIN) && (dieValue1 <= DICE_MAX) || (dieValue2 > DICE_MIN) && (dieValue2 <= DICE_MAX) ) {
 			// First roll
 			if ((dieSum == 10) || (dieSum == 14)) {
 				score = 100;
@@ -54,10 +54,10 @@ public class SoshiiMaGame {
 				System.out.print("Enter the value of die#3: ");
 				dieValue3 = keyboard.nextInt();
 				
-				// Verifying values 
-				/*	3 identical values, player gets +25 pts
-					2 identical values but 3rd die is diff, player gets -5pts
-					All diff values, but one value is 11, player loses, pts = 0 */
+				// Verifying dice values 
+				/*	if 3 identical values, player gets additional 25 pts
+					if 2 identical values but 3rd die is diff, player loses 5pts
+					if they are all different, but one value is 11, player loses, pts = 0 */
 					
 				for (int i=0; i<1; i++) {
 					if (((dieValue1) == (dieValue2)) && ((dieValue2)==(dieValue3)))
@@ -72,7 +72,7 @@ public class SoshiiMaGame {
 						System.out.println();
 						System.out.println("The player wins with "+score+" points");
 					}
-					else
+					else if(((dieValue1)==11)||((dieValue2)==11)||((dieValue3)==11))
 					{
 						System.out.println();
 						System.out.println("The player loses with 0 points");
@@ -80,8 +80,9 @@ public class SoshiiMaGame {
 				}
 			}
 		}
-		else
-		System.out.println("Invalid Input: The value of a die must be within [1...11]");
+//		else if ((dieValue1 < DICE_MIN) && (dieValue1 > DICE_MAX) || ((dieValue2 <DICE_MIN)) && ((dieValue2)>DICE_MAX)) {
+//			System.out.println("Invalid Input: The value of a die must be within [1...11]");
+//		}
 	}
 }
 
